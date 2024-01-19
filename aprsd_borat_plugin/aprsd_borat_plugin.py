@@ -1,4 +1,6 @@
 import logging
+import random
+import textwrap
 
 from oslo_config import cfg
 from aprsd import packets, plugin, threads, utils
@@ -6,6 +8,7 @@ from aprsd.utils import trace
 
 import aprsd_borat_plugin
 from aprsd_borat_plugin import conf  # noqa
+from aprsd_borat_plugin import quotes
 
 CONF = cfg.CONF
 LOG = logging.getLogger("APRSD")
@@ -17,11 +20,11 @@ class BoratPlugin(plugin.APRSDRegexCommandPluginBase):
     # Change this regex to match for your plugin's command
     # Tutorial on regex here: https://regexone.com/
     # Look for any command that starts with w or W
-    command_regex = "^[wW]"
+    command_regex = "^[bB]"
     # the command is for ?
     # Change this value to a 1 word description of the plugin
     # this string is used for help
-    command_name = "weather"
+    command_name = "Borat"
 
     enabled = False
 
@@ -34,22 +37,6 @@ class BoratPlugin(plugin.APRSDRegexCommandPluginBase):
         # Do some checks here?
         self.enabled = True
 
-    def create_threads(self):
-        """This allows you to create and return a custom APRSDThread object.
-
-        Create a child of the aprsd.threads.APRSDThread object and return it
-        It will automatically get started.
-
-        You can see an example of one here:
-        https://github.com/craigerl/aprsd/blob/master/aprsd/threads.py#L141
-        """
-        if self.enabled:
-            # You can create a background APRSDThread object here
-            # Just return it for example:
-            # https://github.com/hemna/aprsd-weewx-plugin/blob/master/aprsd_weewx_plugin/aprsd_weewx_plugin.py#L42-L50
-            #
-            return []
-
     @trace.trace
     def process(self, packet: packets.core.Packet):
 
@@ -58,10 +45,8 @@ class BoratPlugin(plugin.APRSDRegexCommandPluginBase):
         This is only called when self.enabled = True and the command_regex
         matches in the contents of the packet["message_text"]."""
 
-        LOG.info("BoratPlugin Plugin")
-
-        from_callsign = packet.from_call
-        message = packet.message_text
-
         # Now we can process
-        return "some reply message"
+        text = random.choice(quotes.BORAT_QUOTES)
+        LOG.info(text)
+        choice = textwrap.wrap(text, 67, break_long_words=False)
+        return choice
