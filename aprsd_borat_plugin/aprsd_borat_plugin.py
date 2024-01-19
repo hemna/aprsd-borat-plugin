@@ -2,9 +2,9 @@ import logging
 import random
 import textwrap
 
-from oslo_config import cfg
-from aprsd import packets, plugin, threads, utils
+from aprsd import packets, plugin
 from aprsd.utils import trace
+from oslo_config import cfg
 
 import aprsd_borat_plugin
 from aprsd_borat_plugin import conf  # noqa
