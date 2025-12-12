@@ -1,0 +1,17 @@
+CHANGES
+=======
+
+* Converted README.rst to README.md with comprehensive installation and usage documentation
+* Created pyproject.toml for modern Python packaging
+* Fixed documentation warnings (titles, include paths, apidoc/modules, html_static_path)
+* Updated documentation configuration (project name, version source)
+* Added stub files for AUTHORS.rst, CONTRIBUTING.rst, and HISTORY.rst
+
+* censor a few words...for FCC
+* Break long quotes up into multiple
+* Break long quotes up into multiple
+
+v0.1.0
+------
+
+* Initial commit
