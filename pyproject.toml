@@ -110,6 +110,8 @@ Documentation = "https://aprsd-borat-plugin.readthedocs.io/en/latest/"
 [tool.setuptools]
 # Packages to include
 packages = ["aprsd_borat_plugin"]
+py-modules = ["aprsd_borat_plugin"]
+package-data = {"sample" = ["*.dat"]}
 
 # PBR configuration for version management
 # Note: The __init__.py uses pbr.version, so pbr is required in build-system
