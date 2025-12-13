@@ -9,8 +9,10 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+from importlib.metadata import PackageNotFoundError, version
 
-import pbr.version
+try:
+    __version__ = version("aprsd-borat-plugin")
+except PackageNotFoundError:
+    pass
 
-
-__version__ = pbr.version.VersionInfo("aprsd_borat_plugin").version_string()
