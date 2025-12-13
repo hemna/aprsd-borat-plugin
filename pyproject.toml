@@ -108,9 +108,8 @@ Documentation = "https://aprsd-borat-plugin.readthedocs.io/en/latest/"
 
 # If you are using a different build backend, you will need to change this.
 [tool.setuptools]
-# Packages to include
-packages = ["aprsd_borat_plugin"]
-py-modules = ["aprsd_borat_plugin"]
+# Packages to include - use find: to auto-discover all packages and subpackages
+packages = {find = {}}
 package-data = {"sample" = ["*.dat"]}
 
 # PBR configuration for version management
