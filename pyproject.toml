@@ -113,8 +113,8 @@ packages = ["aprsd_borat_plugin"]
 
 # PBR configuration for version management
 # Note: The __init__.py uses pbr.version, so pbr is required in build-system
-[tool.pbr]
-version = ""
+#[tool.pbr]
+#version = ""
 
 [build-system]
 requires = [
