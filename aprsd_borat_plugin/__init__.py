@@ -15,4 +15,3 @@ try:
     __version__ = version("aprsd-borat-plugin")
 except PackageNotFoundError:
     pass
-

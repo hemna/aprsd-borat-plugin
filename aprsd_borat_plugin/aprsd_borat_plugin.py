@@ -7,15 +7,16 @@ from aprsd.utils import trace
 from oslo_config import cfg
 
 import aprsd_borat_plugin
-from aprsd_borat_plugin import conf  # noqa
-from aprsd_borat_plugin import quotes
+from aprsd_borat_plugin import (
+    conf,  # noqa
+    quotes,
+)
 
 CONF = cfg.CONF
 LOG = logging.getLogger("APRSD")
 
 
 class BoratPlugin(plugin.APRSDRegexCommandPluginBase):
-
     version = aprsd_borat_plugin.__version__
     # Change this regex to match for your plugin's command
     # Tutorial on regex here: https://regexone.com/
@@ -39,7 +40,6 @@ class BoratPlugin(plugin.APRSDRegexCommandPluginBase):
 
     @trace.trace
     def process(self, packet: packets.core.Packet):
-
         """This is called when a received packet matches self.command_regex.
 
         This is only called when self.enabled = True and the command_regex
