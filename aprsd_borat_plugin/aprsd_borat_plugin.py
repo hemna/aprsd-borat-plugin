@@ -36,7 +36,7 @@ class BoratPlugin(plugin.APRSDRegexCommandPluginBase):
         will prevent the plugin from being called when packets are
         received."""
         # Do some checks here?
-        self.enabled = True
+        self.enabled = CONF.aprsd_borat_plugin.enabled
 
     @trace.trace
     def process(self, packet: packets.core.Packet):
@@ -44,6 +44,10 @@ class BoratPlugin(plugin.APRSDRegexCommandPluginBase):
 
         This is only called when self.enabled = True and the command_regex
         matches in the contents of the packet["message_text"]."""
+
+        if not self.enabled:
+            LOG.info("Borat Plugin is not enabled")
+            return
 
         # Now we can process
         text = random.choice(quotes.BORAT_QUOTES)
