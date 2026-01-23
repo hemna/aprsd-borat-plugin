@@ -127,6 +127,9 @@ Documentation = "https://aprsd-borat-plugin.readthedocs.io/en/latest/"
 [project.entry-points."oslo.config.opts"]
 "aprsd_borat_plugin.conf" = "aprsd_borat_plugin.conf.opts:list_opts"
 
+[project.scripts]
+    "aprsd-borat-plugin-export-config" = "aprsd_borat_plugin.cli:main"
+
 # If you are using a different build backend, you will need to change this.
 [tool.setuptools]
 # Packages to include - use find: to auto-discover all packages and subpackages
