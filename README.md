@@ -111,6 +111,51 @@ Other Central Asian countries have inferior
 potassium.
 ```
 
+### Example Interaction
+
+Here's a complete example of an interaction with the plugin:
+
+**User sends APRS message:**
+```
+b
+```
+
+**Plugin responds:**
+```
+Kazakhstan is number one exporter of potassium,
+Other Central Asian countries have inferior
+potassium.
+```
+
+**Another example:**
+
+**User sends APRS message:**
+```
+B hello there
+```
+
+**Plugin responds:**
+```
+Yakshemash! In US of A, democracy is very different
+from Kazakhstan. In America, woman *can* vote, but
+horse - *cannot*!
+```
+
+**Another example:**
+
+**User sends APRS message:**
+```
+b tell me something
+```
+
+**Plugin responds:**
+```
+Very sorry to interrupt politic. Might I make a
+shit in your house?
+```
+
+Note: The plugin responds to any message starting with "b" or "B", regardless of what follows. Each response is a randomly selected quote from the database.
+
 ### Verifying It's Working
 
 After starting APRSD, check the logs for messages like:
