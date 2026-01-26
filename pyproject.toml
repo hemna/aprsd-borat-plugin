@@ -84,8 +84,6 @@ classifiers = [
 # For an analysis of this field vs pip's requirements files see:
 # https://packaging.python.org/discussions/install-requires-vs-requirements/
 dependencies = [
-    "pbr",
-    "aprsd>=3.0.0",
     "oslo_config",
 ]
 
